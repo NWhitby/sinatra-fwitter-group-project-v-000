@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "fwitter_secret"
   end
 
-  get '/' do 
+  get '/' do
     erb :index
   end
 
@@ -22,5 +22,5 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
   end
-
+  
 end
